@@ -1,0 +1,36 @@
+.chat-container{
+    width: 40vw;
+}
+.client-pfp,.user-pfp {
+    height: 2.5em;
+    width: 2.5em;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.chat-client,.chat-user {
+    display: flex;
+    font-family: sans-serif;
+    margin: 5px;
+}
+
+.client-message {
+    background-color: rgb(154, 161, 255);
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 25em;
+}
+.user-message {
+    background-color: rgb(226, 228, 255);
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 25em;
+}
+.chat-user{
+    justify-content: end;
+}
+.chat-box.chat-container{
+    display: flex;
+    margin-bottom: auto;
+    
+}

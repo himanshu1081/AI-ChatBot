@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Gabarito:wght@400..900&family=Lexend+Deca:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.left-container {
+    width: 60vw;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    font-family: "Cal Sans", sans-serif;
+    padding: 0px 10px;
+}
+.main-container {
+    padding: 10px;
+    display: flex;
+}
+
+
+.heading-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    height: 60px;
+
+}
+
+.button-container {
+    width: 20vw;
+    display: flex;
+    justify-content: end;
+}
+
+.button {
+    background-color: #eee;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    height: 1.2em;
+    width: 1.2em;
+    transition: all 200ms ease;
+}
+
+.button:hover {
+    background-color: black;
+    color: white;
+}
+
+.button-close {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    width: 4em;
+    height: 1.2em;
+    margin: 5px;
+    padding: 5px;
+    transition: all 100ms ease-in;
+}
+
+.button-close-text {
+    font-size: 15px;
+    margin-left: 5px;
+}
+
+.button-close:hover {
+    background-color: rgb(143, 142, 142);
+    color: black;
+}
+
+.heading,
+.name {
+    font-size: 20px;
+    margin: 5px;
+}
+.name{
+    margin-left: 60px;
+}
+
+.heading {
+    margin-left: 20px;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.filter {
+    background-color: white;
+    border: none;
+    
+}
+
+.contacts-container {
+    width: 20vw;
+    height: calc(100vh - 100px);
+    background-color: rgb(255, 255, 255);
+    overflow-y: auto;
+    position: relative;
+    text-overflow: ellipsis;
+}
+
+.contacts-container::-webkit-scrollbar {
+    display: none;
+}
+.button2-container{
+    display: flex;
+    
+}
+
+@media(max-width: 768px) {
+
+    .heading,
+    .name {
+        font-size: 40px;
+        padding: 5px;
+    }
+}
