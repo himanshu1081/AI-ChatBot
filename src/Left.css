@@ -5,13 +5,12 @@
     height: 100vh;
     background-color: rgb(255, 255, 255);
     font-family: "Cal Sans", sans-serif;
-    padding: 0px 10px;
 }
+
 .main-container {
     padding: 10px;
     display: flex;
     justify-content: space-between;
-    width: inherit;
 }
 
 
@@ -21,8 +20,7 @@
     align-items: center;
     background-color: rgb(255, 255, 255);
     height: 60px;
-    border: 1px solid grey;
-
+    padding: 0 5px;
 }
 
 .button-container {
@@ -52,7 +50,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 5px;
+    border-radius: 8px;
     width: 4em;
     height: 1.2em;
     margin: 5px;
@@ -66,8 +64,8 @@
 }
 
 .button-close:hover {
-    background-color: rgb(143, 142, 142);
-    color: black;
+    background-color: #eee;
+    color: rgb(0, 0, 0);
 }
 
 .heading,
@@ -75,26 +73,25 @@
     font-size: 20px;
     margin: 5px;
 }
-.name{
+
+.name {
     margin-left: 60px;
 }
 
-.heading {
-    margin-left: 20px;
-}
+
 
 .filter-container {
     display: flex;
     justify-content: space-between;
     position: sticky;
-    top:0;
+    top: 0;
     left: 0;
     background-color: white;
 }
 
 .filter {
     border: none;
-    
+
 }
 
 .contacts-container {
@@ -111,9 +108,9 @@
     display: none;
 }
 
-.button2-container{
+.button2-container {
     display: flex;
-    
+
 }
 
 @media(max-width: 768px) {

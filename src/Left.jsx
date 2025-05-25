@@ -68,12 +68,17 @@ function Left() {
     const [name, setName] = useState(data[0].name);
     const [pfp, setPfp] = useState(data[0].pfp);
     const [message, setMessage] = useState(data[0].message);
-    const[inputMessage,setInputMessage]=useState("");
-    const[sentMessage,setSentMessage]=useState("Wow that's so cool!");
-    const handleKeyDown=(e)=>{
-        if(e.key=='Enter'){
+    const [inputMessage, setInputMessage] = useState("");
+    const [sentMessage, setSentMessage] = useState("Wow that's so cool!");
+    const inputChanges = () => {
+        if(inputMessage!==''){
             setSentMessage(inputMessage);
             setInputMessage("");
+        }
+    };
+    const handleKeyDown = (e) => {
+        if (e.key == 'Enter') {
+            inputChanges();
         }
     };
     return (
@@ -123,13 +128,15 @@ function Left() {
                         </div>
                     </div>
                     <div className="chat-container">
-                        <div className="chat-client">
-                            <img src={pfp} alt="" className='client-pfp' />
-                            <div className="client-message">{message}</div>
-                        </div>
-                        <div className="chat-user">
-                            <div className="user-message">{sentMessage}</div>
-                            <img src="https://randomuser.me/api/portraits/men/57.jpg" alt='user-pfp' className='user-pfp' />
+                        <div className="message-container">
+                            <div className="chat-client">
+                                <img src={pfp} alt="" className='client-pfp' />
+                                <div className="client-message">{message}</div>
+                            </div>
+                            <div className="chat-user">
+                                <div className="user-message">{sentMessage}</div>
+                                <img src="https://randomuser.me/api/portraits/men/57.jpg" alt='user-pfp' className='user-pfp' />
+                            </div>
                         </div>
                         <div className="chat-box-container">
                             <div className="line1">
@@ -139,20 +146,19 @@ function Left() {
                                     <option>Use AI</option>
                                 </select>
                             </div>
-                            <input type="text" value={inputMessage} className='message-input' placeholder='Send a message...' onKeyDown={handleKeyDown} onChange={(e)=>setInputMessage(e.target.value)}/>
+                            <input type="text" value={inputMessage} className='message-input' placeholder='Send a message...' onKeyDown={handleKeyDown} onChange={(e) => setInputMessage(e.target.value)} />
                             <div className='line3'>
                                 <div className="options">
-                                <AiFillThunderbolt />
-                                <RxDividerVertical />
-                                <RiBookmarkFill />
-                                <MdEmojiEmotions />
+                                    <AiFillThunderbolt />
+                                    <RxDividerVertical />
+                                    <RiBookmarkFill />
+                                    <MdEmojiEmotions />
                                 </div>
-                                <div className="send-button">
+                                <div className="send-button" onClick={inputChanges}>
                                     Send
                                 </div>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
             </div>
