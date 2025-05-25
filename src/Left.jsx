@@ -68,12 +68,17 @@ function Left() {
     const [name, setName] = useState(data[0].name);
     const [pfp, setPfp] = useState(data[0].pfp);
     const [message, setMessage] = useState(data[0].message);
+    const[inputMessage,setInputMessage]=useState("");
+    const[sentMessage,setSentMessage]=useState("Wow that's so cool!");
+    const handleKeyDown=(e)=>{
+        if(e.key=='Enter'){
+            setSentMessage(inputMessage);
+            setInputMessage("");
+        }
+    };
     return (
         <>
             <div className="left-container">
-                <div className="navbar">
-
-                </div>
                 <div className="heading-container">
                     <span className='heading'>Your Inbox</span>
                     <span className="name">{name}</span>
@@ -97,7 +102,7 @@ function Left() {
                                 <option>By-Date</option>
                             </select>
                         </div>
-                        <div className="chat-container">
+                        <div className="number-container">
                             <div className="person">
                                 {data.map((d, index) => {
                                     return (
@@ -123,7 +128,7 @@ function Left() {
                             <div className="client-message">{message}</div>
                         </div>
                         <div className="chat-user">
-                            <div className="user-message">Hello thats cool from India.</div>
+                            <div className="user-message">{sentMessage}</div>
                             <img src="https://randomuser.me/api/portraits/men/57.jpg" alt='user-pfp' className='user-pfp' />
                         </div>
                         <div className="chat-box-container">
@@ -134,15 +139,20 @@ function Left() {
                                     <option>Use AI</option>
                                 </select>
                             </div>
-                            <input type="text" className='message-input' />
+                            <input type="text" value={inputMessage} className='message-input' placeholder='Send a message...' onKeyDown={handleKeyDown} onChange={(e)=>setInputMessage(e.target.value)}/>
                             <div className='line3'>
+                                <div className="options">
                                 <AiFillThunderbolt />
                                 <RxDividerVertical />
                                 <RiBookmarkFill />
                                 <MdEmojiEmotions />
-
+                                </div>
+                                <div className="send-button">
+                                    Send
+                                </div>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>

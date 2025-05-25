@@ -10,6 +10,8 @@
 .main-container {
     padding: 10px;
     display: flex;
+    justify-content: space-between;
+    width: inherit;
 }
 
 
@@ -19,6 +21,7 @@
     align-items: center;
     background-color: rgb(255, 255, 255);
     height: 60px;
+    border: 1px solid grey;
 
 }
 
@@ -83,11 +86,13 @@
 .filter-container {
     display: flex;
     justify-content: space-between;
-    margin: 10px;
+    position: sticky;
+    top:0;
+    left: 0;
+    background-color: white;
 }
 
 .filter {
-    background-color: white;
     border: none;
     
 }
@@ -99,11 +104,13 @@
     overflow-y: auto;
     position: relative;
     text-overflow: ellipsis;
+    overflow-x: hidden;
 }
 
 .contacts-container::-webkit-scrollbar {
     display: none;
 }
+
 .button2-container{
     display: flex;
     

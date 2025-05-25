@@ -8,6 +8,7 @@
     cursor: default;
     border-radius: 10px;
     width: 19vw;
+    margin-bottom: 1px;
 }
 
 .card-container:hover {
