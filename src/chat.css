@@ -95,6 +95,7 @@
 
 .send-button {
     color: rgb(170, 170, 170);
+    font-family: "poppins",sans-serif;
 }
 .send-button:hover {
     color: rgb(0, 0, 0);
