@@ -60,10 +60,14 @@
     padding: 10px;
     max-width: 25em;
     height: max-content;
+    flex-wrap: wrap;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .chat-user {
     justify-content: end;
+    align-items: center;
 }
 
 .message-input {

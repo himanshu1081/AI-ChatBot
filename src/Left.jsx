@@ -69,10 +69,10 @@ function Left() {
     const [pfp, setPfp] = useState(data[0].pfp);
     const [message, setMessage] = useState(data[0].message);
     const [inputMessage, setInputMessage] = useState("");
-    const [sentMessage, setSentMessage] = useState("Wow that's so cool!");
+    const [sentMessage, setSentMessage] = useState([{ text: "Wow that's so cool!" }]);
     const inputChanges = () => {
-        if(inputMessage!==''){
-            setSentMessage(inputMessage);
+        if (inputMessage !== '') {
+            setSentMessage(prev => [...prev, { text: inputMessage }]);
             setInputMessage("");
         }
     };
@@ -80,7 +80,7 @@ function Left() {
         if (e.key == 'Enter') {
             inputChanges();
         }
-    };
+    }
     return (
         <>
             <div className="left-container">
@@ -133,10 +133,12 @@ function Left() {
                                 <img src={pfp} alt="" className='client-pfp' />
                                 <div className="client-message">{message}</div>
                             </div>
-                            <div className="chat-user">
-                                <div className="user-message">{sentMessage}</div>
-                                <img src="https://randomuser.me/api/portraits/men/57.jpg" alt='user-pfp' className='user-pfp' />
-                            </div>
+                            {sentMessage.map((message, index) => (
+                                <div className="chat-user" key={index}>
+                                    <div className="user-message">{message.text}</div>
+                                    <img src="https://randomuser.me/api/portraits/men/57.jpg" alt='user-pfp' className='user-pfp' />
+                                </div>
+                            ))}
                         </div>
                         <div className="chat-box-container">
                             <div className="line1">
