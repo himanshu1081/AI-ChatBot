@@ -22,7 +22,7 @@ function Right() {
         setTimeout(() => {
             setAskAIMessage(prev => {
                 const withoutThinking = prev.slice(0, -1);
-                return [...withoutThinking, { user: "AI", text: "Here is your real response!",pfp:AIlogo }];
+                return [...withoutThinking, { user: "AI", text: "Did you know that jellyfish have survived five mass extinctions and yet they still don't have a brain? Meanwhile, I'm sitting here with billions of parameters trying to decide whether you meant 'metaimage' or if you just sneezed on your keyboard. Life is mysterious.",pfp:AIlogo }];
             });
         }, 2000);
     }
