@@ -69,6 +69,8 @@ function Left() {
     const [pfp, setPfp] = useState(data[0].pfp);
     const [message, setMessage] = useState(data[0].message);
     const [inputMessage, setInputMessage] = useState("");
+    const [sidebar, setSidebar] = useState(true);
+    const [darkmode, setDarkmode] = useState(false);
     const [sentMessage, setSentMessage] = useState([{ text: "Wow that's so cool!" }]);
     const inputChanges = () => {
         if (inputMessage !== '') {
@@ -81,23 +83,30 @@ function Left() {
             inputChanges();
         }
     }
+    const toggleDarkMode = () => {
+        setDarkmode(!darkmode);
+        console.log(darkmode);
+    }
     return (
         <>
-            <div className="left-container">
+            <div className={`left-container ${darkmode ? 'dark' : 'light'}`}>
                 <div className="heading-container">
                     <span className='heading'>Your Inbox</span>
                     <span className="name">{name}</span>
                     <div className="button-container">
                         <HiDotsHorizontal className='button' />
-                        <BsFillMoonStarsFill className='button' />
-                        <div className="button-close">
+                        <BsFillMoonStarsFill className='button' onClick={toggleDarkMode} />
+                        <div className="button-close" >
                             <FaWindowClose />
                             <span className='button-close-text'>Close</span>
                         </div>
                     </div>
                 </div>
                 <div className="main-container">
-                    <div className="contacts-container">
+                    <div className={`contacts-container ${sidebar ? 'expanded' : 'collapsed'}`}>
+                        <div className="button2-container" onClick={() => setSidebar(false)}>
+                            <LuPanelLeftClose className='button' />
+                        </div>
                         <div className="filter-container">
                             <select className='filter filter-1'>
                                 <option>Open</option>
@@ -118,14 +127,13 @@ function Left() {
                                             pfp={d.pfp}
                                             message={d.message}
                                             setName={setName} setPfp={setPfp} setMessage={setMessage}
+                                            darkmode={darkmode}
                                         />
                                     );
                                 })}
                             </div>
                         </div>
-                        <div className="button2-container">
-                            <LuPanelLeftClose className='button' />
-                        </div>
+
                     </div>
                     <div className="chat-container">
                         <div className="message-container">
@@ -156,9 +164,7 @@ function Left() {
                                     <RiBookmarkFill />
                                     <MdEmojiEmotions />
                                 </div>
-                                <div className="send-button" onClick={inputChanges}>
-                                    Send
-                                </div>
+
                             </div>
                         </div>
                     </div>

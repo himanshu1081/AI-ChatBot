@@ -2,14 +2,34 @@
     background: radial-gradient(circle at bottom, #eeb4ff, white);
     height: 100vh;
     width: 40vw;
+    transition: transform 1s ease;
 }
-
+.collapsed2{
+    transform: translateX(200%);
+}
+.expanded2{
+     transform: translateX(200%);
+}
 .option-container {
     display: flex;
     align-items: center;
     height: 58px;
 }
-
+.sidebar-close{
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 300ms ease;
+    background-color: #eee;
+    border-radius: 5px;
+    
+}
+.sidebar-close:hover{
+    background-color: #000000;
+    color: white;
+}
 .heading-right {
     display: flex;
     justify-content: space-between;

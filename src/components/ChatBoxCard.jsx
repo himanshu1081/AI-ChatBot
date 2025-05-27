@@ -10,7 +10,7 @@ const handleCardClick = ()=>{
 };
     return (
         <>
-            <div className="card-container" onClick={() => handleCardClick()}>
+            <div className={`card-container ${props.darkmode?'dark':'light'}`} onClick={() => handleCardClick()}>
                 <div className="pfp-container">
                     <img src={props.pfp} alt='pfp' className='pfp' />
                 </div>

@@ -7,8 +7,8 @@ import Right from './Right.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <div className='page'>
-      <Left />
-      <Right />
+      <Left className="left"/>
+      <Right className="right"/>
     </div>
   </StrictMode>,
 )

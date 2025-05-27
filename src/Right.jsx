@@ -11,24 +11,25 @@ import AIlogo from './assets/robot-2-fill.svg';
 function Right() {
     const [inputMessage, setInputMessage] = useState("");
     const [askAIMessage, setAskAIMessage] = useState([]);
-
+    const [darkmode, setDarkmode] = useState(false);
+    const [sidebar, setSidebar] = useState(true);
 
 
     const replyAI = () => {
         setTimeout(() => {
-            setAskAIMessage(prev => [...prev, { user: "AI", text: "Thinking...",pfp:AIlogo }]);
+            setAskAIMessage(prev => [...prev, { user: "AI", text: "Thinking...", pfp: AIlogo }]);
 
         }, 500);
         setTimeout(() => {
             setAskAIMessage(prev => {
                 const withoutThinking = prev.slice(0, -1);
-                return [...withoutThinking, { user: "AI", text: "Did you know that jellyfish have survived five mass extinctions and yet they still don't have a brain? Meanwhile, I'm sitting here with billions of parameters trying to decide whether you meant 'metaimage' or if you just sneezed on your keyboard. Life is mysterious.",pfp:AIlogo }];
+                return [...withoutThinking, { user: "AI", text: "Did you know that jellyfish have survived five mass extinctions and yet they still don't have a brain? Meanwhile, I'm sitting here with billions of parameters trying to decide whether you meant 'metaimage' or if you just sneezed on your keyboard. Life is mysterious.", pfp: AIlogo }];
             });
         }, 2000);
     }
     const inputChanges = () => {
         if (inputMessage !== '') {
-            setAskAIMessage(prev => [...prev, { user: "You", text: inputMessage,pfp:"https://randomuser.me/api/portraits/men/57.jpg"}]);
+            setAskAIMessage(prev => [...prev, { user: "You", text: inputMessage, pfp: "https://randomuser.me/api/portraits/men/57.jpg" }]);
             setInputMessage("");
             replyAI();
         }
@@ -40,7 +41,7 @@ function Right() {
     }
     return (
         <>
-            <div className="right-container">
+            <div className={`right-container ${darkmode ? 'dark' : 'light'} ${sidebar ? 'expand2' : 'collapsed2'}`}>
                 <div className="heading-right">
                     <div className='option-container'>
                         <div className="header-option ai-copilot">
@@ -51,7 +52,7 @@ function Right() {
                             Details
                         </span>
                     </div>
-                    <div className="sidebar-close">
+                    <div className="sidebar-close" onClick={()=>setSidebar(false)}>
                         <PiSidebarBold size={20} />
                     </div>
                 </div>
